@@ -7,17 +7,8 @@ def alphabet_position(text:str):
     ]
     text = list(text.lower())
     text = [i for i in text if i in letters]
-    text = map(lambda a: letters.index(a) + 1, text)
-    text = str(list(text))
+    text = str(list(map(lambda a: letters.index(a) + 1, text)))
     for i in ('[', ']', ','):
         text = text.replace(i, '')
-    # for i in text:
-        # if i in letters:
-        #     num = letters.index(i) + 1
-        #     text = text.replace(i, f'{num}')
-    #     elif i == ' ':
-    #         continue
-    #     else:
-    #         text = text.replace(i, '')
     return str(text)
 print(alphabet_position("The sunset sets at twelve o' clock."))
